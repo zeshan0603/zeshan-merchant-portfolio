@@ -127,7 +127,7 @@ const getActive = () => document.body.dataset.active === "true",
 const shift = (image, index, rangeX, rangeY) => {
   const active = getActive();
         
-  const translationIntensity = active ? 24 : 4,
+  const translationIntensity = active ? 24 : 2,
         maxTranslation = translationIntensity * (index + 1),
         currentTranslation = `${maxTranslation * rangeX}% ${maxTranslation * rangeY}%`;
   
@@ -216,3 +216,5 @@ const enhance = id => {
 
 enhance("channel-link");
 // GITHUB EFFECT
+
+
