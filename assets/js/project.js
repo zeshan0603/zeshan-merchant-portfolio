@@ -1,4 +1,77 @@
+// CUSTOM CURSOR
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+let animationFrameId;
+let mouseMoveEventAdded = false; // To keep track if the event is already added
 
+const colors = [
+  "#ee2b47",
+  "#f13945",
+  "#f34543",
+  "#f64f41",
+  "#f8593f",
+  "#f9633e",
+  "#fb6c3d",
+  "#fc753d",
+  "#fd7d3d",
+  "#fe863d",
+  "#ff8e3e",
+  "#ff9640"
+];
+
+function updateCoords(e) {
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+}
+
+function addMouseMoveListener() {
+  if (!mouseMoveEventAdded) {
+    window.addEventListener("mousemove", updateCoords);
+    mouseMoveEventAdded = true;
+  }
+}
+
+function animateCircles() {
+  addMouseMoveListener(); // Ensuring the mousemove event is listened to
+
+  let x = coords.x;
+  let y = coords.y;
+
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+
+    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+
+  animationFrameId = requestAnimationFrame(animateCircles);
+}
+
+function startAnimation() {
+  animateCircles();
+}
+
+function stopAnimation() {
+  cancelAnimationFrame(animationFrameId);
+  window.removeEventListener("mousemove", updateCoords);
+  mouseMoveEventAdded = false;
+}
+
+circles.forEach(function (circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
+});
+
+
+startAnimation();
 
   // 3d logo
   const logo = document.getElementById("logo"),
