@@ -96,7 +96,18 @@ body {
 .navbar:hover::before {
     left: 100%;
 }
+.nav__link {
+    /* border: 1px solid red; */
+    color: white;
+    font-family: var(--ff-meriweather);
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: all ease 0.3s;
+}
 
+.nav__link:hover {
+    color: var(--primary);
+}
 #logo {
     position: relative;
     width: 300px;
