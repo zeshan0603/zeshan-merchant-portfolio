@@ -76,6 +76,7 @@ body {
     z-index: 99;
     display: flex;
     justify-content: space-between;
+    padding-right: 30px;
     align-items: center;
     background: rgba(255, 255, 255, .1);
     backdrop-filter: blur(5px);
@@ -96,6 +97,20 @@ body {
 .navbar:hover::before {
     left: 100%;
 }
+
+.nav__link {
+    /* border: 1px solid red; */
+    color: white;
+    font-family: var(--ff-meriweather);
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: all ease 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--primary);
+}
+
 
 #logo {
     position: relative;
@@ -372,7 +387,7 @@ body {
 .project h1 {
     color: var(--secondary);
     font-size: clamp(1.625rem, calc(1.625rem + ((1vw - 0.2rem) * 4.375)), 6rem);
-    font-size: 7rem;
+    /* font-size: 7rem; */
     line-height: 1.5;
     font-weight: 600;
     /* word-spacing: 20px; */
