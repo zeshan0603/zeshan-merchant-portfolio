@@ -59,9 +59,16 @@
         flex-wrap: wrap;
     }
 
+
+
+
     /* INDEX PAGE */
 
     /* PROJECT PAGE */
+    .project {
+        padding: 30px
+    }
+
     .cards {
         grid-template-columns: repeat(2, 40%);
         justify-content: center;
@@ -104,7 +111,6 @@
         grid-template-columns: 350px;
         justify-content: center;
     }
-
 
 }
 
