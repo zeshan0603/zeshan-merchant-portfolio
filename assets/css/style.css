@@ -113,18 +113,19 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 100px;
+    z-index: 25;
 }
 
 .hero h1 {
     position: relative;
     margin-bottom: 20px;
     font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 0.2rem) * 5.5)), 8rem);
+    z-index: 25;
 }
 
 .hero h1 a {
     background-clip: text;
     color: transparent;
-    cursor: pointer;
     letter-spacing: 2px;
     background-color: #EE2B47;
     background-image: linear-gradient(60deg, #EE2B47, #ea5454);
@@ -133,6 +134,7 @@ body {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
+    z-index: 25;
 }
 
 .github__text {
@@ -372,7 +374,7 @@ body {
     width: 70%;
     height: 95%;
     object-fit: contain;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease;
     border-radius: calc(var(--curve) * 1px);
 }
 
